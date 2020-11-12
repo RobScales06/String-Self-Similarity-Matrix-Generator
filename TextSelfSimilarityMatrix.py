@@ -1,0 +1,17 @@
+from PIL import Image
+import numpy as np
+
+txtBlock = '[Coro] Pronto llegará El día de mi suerte Sé que antes de mi muerte Seguro que mi suerte cambiará Pronto llegará El día de mi suerte Sé que antes de mi muerte Seguro que mi suerte cambiará [Verso 1] Cuando niño mi mamá se murió Solito con el viejo me dejó Me dijo: "solo nunca quedarás" Porque él no esperaba una enfermedad A los diez años papá se murió Se fue con mamá para el más allá Y la gente decían al verme llorar: "No llores nene que tu suerte cambiará" Y ¿cuándo será? [Coro] Pronto llegará El día de mi suerte Sé que antes de mi muerte Seguro que mi suerte cambiará (Óyeme) Pronto llegará El día de mi suerte Sé que antes de mi muerte Seguro que mi suerte cambiará [Verso 2] Esperando mi suerte quedé yo Pero mi vida otro rumbo cogió Sobreviviendo en una realidad De la cual yo no podía ni escapar Para comer hay que buscarse el real Aunque sea regla de esta sociedad A la cárcel te escribe mi amistad "No te apures que tu suerte cambiará" Oye verás [Coro] Pronto llegará El día de mi suerte Sé que antes de mi muerte Seguro que mi suerte cambiará Pronto llegará El día de mi suerte Sé que antes de mi muerte Seguro que mi suerte cambiará [Verso 3] Ahora me encuentro aquí en mi soledad Pensando qué de mi vida será No tengo sitio dónde regresar Y tampoco a nadie quiero ocupar Si el destino me vuelve a traicionar Te juro que no puedo fracasar Estoy cansado de tanto esperar Y estoy seguro que mi suerte cambiará Y ¿cuándo será? [Coro] Pronto llegará El día de mi suerte Sé que antes de mi muerte Seguro que mi suerte cambiará Pronto llegará El día de mi suerte Sé que antes de mi muerte Seguro que mi suerte cambiará [Verso 4] Sufrí la parte de mi vida ya Sin un complejo de inferioridad Por eso no me canso de esperar Pues un día Dios a mí me ayudará Y el día que eso suceda, escuche usted A todo el mundo yo le ayudaré Porque tarde o temprano usted verá Cómo el día de mi suerte llegará Y ya lo verá [Puente] ¡Ahora sí! Cógeme que voy sin jockey [Coro] Pronto llegará El día de mi suerte Sé que antes de mi muerte Seguro que mi suerte cambiará Pronto llegará El día de mi suerte Sé que antes de mi muerte Seguro que mi suerte cambiará [Verso 5] Muchas veces me pongo a contemplar Que yo nunca a nadie le he hecho mal ¿Por qué la vida así me ha de tratar? Si lo que busco es la felicidad Trato de complacer la humanidad Pero mi dicha aquí ha sido fatal No pierdo la esperanza de luchar Y seguro que mi suerte cambiará Pero ¿cuándo será? [Coro] Pronto llegará El día de mi suerte Sé que antes de mi muerte Seguro que mi suerte cambiará Pronto llegará El día de mi suerte Sé que antes de mi muerte Seguro que mi suerte cambiará [Verso 6] Esperando la vida he de pasar Este martirio no podré aguantar Y pregunto hasta cuándo durará Tal vez sí lo podré sobrellevar Si el destino me vuelve a traicionar Te juro que no puedo fracasar Estoy cansado de tanto esperar Y estoy seguro que mi suerte cambiará Pero ¿cuándo será?'
+splitBlock = txtBlock.split(' ')
+compareList = splitBlock
+listLen = len(compareList)
+im= Image.new('RGB', (listLen, listLen))
+counter = 0
+
+for i in range(0,listLen):
+    for j in range(0,listLen):
+        if(compareList[i] == compareList[j] ):
+            im.putpixel((i,j),(0,255,255))
+            print(str(compareList[i]) +' '+ '%i,%i'%(i,j))
+
+im.save('test.png')
